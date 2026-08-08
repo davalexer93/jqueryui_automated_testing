@@ -15,11 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Build and analyze
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: gradle build sonar --info
-
       - name: Set up JDK Temurin 18.0.2
         uses: actions/setup-java@v4
         with:
