@@ -64,7 +64,6 @@ sonar {
 test {
     useJUnitPlatform()
     ignoreFailures = true
-}
 
 gradle.startParameter.continueOnFailure = true
 
