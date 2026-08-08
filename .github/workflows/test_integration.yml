@@ -31,7 +31,7 @@ jobs:
         run: gradle build sonar --info
 
       - name: Run Serenity tests
-        run: gradle clean test "-Dheadless.mode=true" --info
+        run: gradle clean test aggregate "-Dwebdriver.driver=chrome"
 
       - uses: actions/upload-artifact@v7
         if: always()
