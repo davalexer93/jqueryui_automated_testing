@@ -16,14 +16,10 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Set up JDK Temurin 18.0.2
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '18.0.2'
-
-      - name: Grant execute permission for Gradle wrapper
-        run: chmod +x ./gradlew
-        continue-on-error: true
 
       - name: Build and analyze
         env:
