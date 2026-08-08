@@ -1,4 +1,4 @@
-Feature: Select dates in the datepicker
+Feature: Select date components in the datepicker
 
 
   Scenario: Successful date components selection
