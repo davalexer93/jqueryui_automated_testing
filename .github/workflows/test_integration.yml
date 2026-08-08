@@ -27,7 +27,7 @@ jobs:
         run: gradle build sonar --info
 
       - name: Run Serenity tests
-        run: gradle clean test --stacktrace
+        run: gradle clean test --info
 
       - uses: actions/upload-artifact@v7
         if: always()
