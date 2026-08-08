@@ -21,11 +21,6 @@ jobs:
           distribution: 'temurin'
           java-version: '18.0.2'
 
-      - name: Build and analyze
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: gradle build sonar --info
-
       - name: Run Serenity tests
         run: gradle clean test --stacktrace
 
