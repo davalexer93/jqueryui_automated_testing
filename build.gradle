@@ -1,10 +1,3 @@
-defaultTasks 'clean', 'test', 'aggregate'
-
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
-
 buildscript {
     repositories {
         maven {
@@ -16,6 +9,16 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.sonarqube" version "7.3.1.8318"
+}
+
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -51,6 +54,13 @@ dependencies {
     testImplementation "org.assertj:assertj-core:${assertj_core_version}"
 }
 
+sonar {
+    properties {
+        property "sonar.projectKey", "davalexer93_jqueryui_automated_testing"
+        property "sonar.organization", "davalexer93"
+    }
+}
+
 test {
     useJUnitPlatform()
     ignoreFailures = true
@@ -60,11 +70,6 @@ gradle.startParameter.continueOnFailure = true
 
 test.finalizedBy(aggregate)
 
-
-test {
-
-    ignoreFailures = true
-}
 
 
 tasks.withType(JavaCompile) {
