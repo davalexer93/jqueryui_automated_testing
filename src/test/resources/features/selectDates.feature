@@ -1,7 +1,7 @@
 Feature: Datepicker selection of specific dates
 
 
-  Scenario Outline: Select a specific date in the datepicker
+  Scenario Outline: Select a specific dates in the datepicker
     Given Alex opens the jqueryUI page
     When Alex clicks on the datepicker
     Then Alex selects the date "<year>", "<month>", "<day>"
